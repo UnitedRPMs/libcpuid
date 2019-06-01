@@ -1,16 +1,16 @@
-%global gitdate 20170703
-%global commit0 b5bd5355829dcd123fba20a3c1d14f2bc139dc43
+%global gitdate 20190601
+%global commit0 7a0701d452083e4492a61bd26792deff06ef3fd7
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           libcpuid
-Version:        0.4.0
+Version:        0.4.1
 Release: 	1%{?gver}%{dist}
 Summary:        Provides CPU identification for x86
 License:        BSD-2-Clause
 Group:		Development/Libraries
 Url:            https://github.com/eloaders/libcpuid
-Source0: 	https://github.com/eloaders/libcpuid/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
+Source0: 	https://github.com/anrieff/libcpuid/archive/%{commit0}.tar.gz#/%{name}-%{shortcommit0}.tar.gz
 
 BuildRequires:  make git autoconf libtool automake
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
@@ -53,7 +53,7 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %defattr(-,root,root)
 %{_bindir}/cpuid_tool
 %{_libdir}/libcpuid.so.14
-%{_libdir}/libcpuid.so.14.0.0
+%{_libdir}/libcpuid.so.14.0.1
 
 %files devel
 %{_libdir}/pkgconfig/libcpuid.pc
@@ -65,8 +65,11 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
 %changelog
 
-* Mon Jul 03 2017 David Vasquez <davidjeremias82 at gmail dot com> 0.4.0-1-2.gitb5bd535
-- Updated to 0.4.0-1-2.gitb5bd535
+* Sat Jun 01 2019 David Vasquez <davidjeremias82 at gmail dot com> 0.4.1-1.git7a0701d
+- Updated to 0.4.1-2.git7a0701d
+
+* Mon Jul 03 2017 David Vasquez <davidjeremias82 at gmail dot com> 0.4.0-2.gitb5bd535
+- Updated to 0.4.0-2.gitb5bd535
 
 * Thu Jan 12 2017 David Vasquez <davidjeremias82 at gmail dot com> - 0.4.0-1-20170112gitfa87a5e
 - Updated to 0.4.0-20170112gitfa87a5e
