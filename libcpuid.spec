@@ -1,10 +1,10 @@
 %global gitdate 20190601
-%global commit0 5da90c9dcc8db37fed62c9fc681ade6f31418e78
+%global commit0 179fbcb713566c2084a1903729b6eebba68a4424
 %global shortcommit0 %(c=%{commit0}; echo ${c:0:7})
 %global gver .git%{shortcommit0}
 
 Name:           libcpuid
-Version:        0.5.0
+Version:        0.5.1
 Release: 	1%{?gver}%{dist}
 Summary:        Provides CPU identification for x86
 License:        BSD-2-Clause
@@ -53,7 +53,7 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %defattr(-,root,root)
 %{_bindir}/cpuid_tool
 %{_libdir}/libcpuid.so.15
-%{_libdir}/libcpuid.so.15.0.0
+%{_libdir}/libcpuid.so.15.0.1
 
 
 %files devel
@@ -65,6 +65,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/libcpuid.so
 
 %changelog
+
+* Sat Apr 17 2021 David Va <davidva at tuta dot io> 0.5.1-1.git179fbcb
+- Updated to 0.5.1-1.git179fbcb
 
 * Wed May 27 2020 David Vasquez <davidjeremias82 at gmail dot com> 0.5.0-1.git5da90c9
 - Updated to 0.5.0-1.git5da90c9
